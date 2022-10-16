@@ -1,0 +1,23 @@
+spring:
+    application:
+        name: bankinAccount
+    jackson:
+        serialization.write_dates_as_timestamps: false
+        serialization.indent_output: true
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url:postgres://hdcgxzrshezwmi:5f1f39fe003b72b1daf74f32fc9655438dafbaaa58940de045d46762a12cb510@ec2-54-75-246-50.eu-west-1.compute.amazonaws.com:5432/dfi5918u8c4n4g # db name , user and password should be updated in order to interact with db
+        username: hdcgxzrshezwmi # updateRequired
+        password: 5f1f39fe003b72b1daf74f32fc9655438dafbaaa58940de045d46762a12cb510  # updateRequired
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+        database: POSTGRESQL
+        show-sql: true
+        properties:
+           hibernate.temp.use_jdbc_metadata_defaults: false
+           hibernate.id.new_generator_mappings: true
+        hibernate:
+            ddl-auto: none
+
+    liquibase:
+      change-log: classpath:/liquibase/db-changelog.xml
